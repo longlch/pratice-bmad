@@ -1,0 +1,93 @@
+# Workflow Status Template
+
+# This tracks progress through BMM methodology Analysis, Planning, and Solutioning phases.
+# Implementation phase is tracked separately in sprint-status.yaml
+
+# STATUS DEFINITIONS:
+# ==================
+# Initial Status (before completion):
+#   - required: Must be completed to progress
+#   - optional: Can be completed but not required
+#   - recommended: Strongly suggested but not required
+#   - conditional: Required only if certain conditions met (e.g., if_has_ui)
+#
+# Completion Status:
+#   - {file-path}: File created/found (e.g., "docs/product-brief.md")
+#   - skipped: Optional/conditional workflow that was skipped
+
+generated: "2025-11-30"
+project: "ecommerce-shop"
+project_type: "greenfield"
+selected_track: "method"
+field_type: "greenfield"
+workflow_path: "method-greenfield.yaml"
+
+workflow_status:
+  # Phase 0: Discovery (Optional)
+  - id: "product-brief"
+    name: "Product Brief"
+    phase: 0
+    agent: "analyst"
+    command: "product-brief"
+    status: "required"
+    note: "Strategic product planning - market positioning, MVP features, success metrics"
+
+  # Phase 1: Planning
+  - id: "prd"
+    name: "Product Requirements Document"
+    phase: 1
+    agent: "pm"
+    command: "prd"
+    status: "required"
+    note: "Complete PRD with functional and non-functional requirements"
+
+  - id: "create-design"
+    name: "UX Design"
+    phase: 1
+    agent: "ux-designer"
+    command: "create-design"
+    status: "conditional"
+    note: "if_has_ui - Recommended for e-commerce with user flows and checkout process"
+
+  # Phase 2: Solutioning
+  - id: "create-architecture"
+    name: "Architecture"
+    phase: 2
+    agent: "architect"
+    command: "create-architecture"
+    status: "required"
+    note: "Complete system design for payment processing, digital delivery, user management"
+
+  - id: "create-epics-and-stories"
+    name: "Create Epics & Stories"
+    phase: 2
+    agent: "pm"
+    command: "create-epics-and-stories"
+    status: "required"
+    note: "Break down PRD into implementable epics and stories with full context"
+
+  - id: "test-design"
+    name: "Test Design"
+    phase: 2
+    agent: "tea"
+    command: "test-design"
+    status: "recommended"
+    note: "System-level testability assessment - important for payment flows and security"
+
+  - id: "implementation-readiness"
+    name: "Implementation Readiness"
+    phase: 2
+    agent: "architect"
+    command: "implementation-readiness"
+    status: "required"
+    note: "Final validation gate - ensures PRD + UX + Architecture + Epics cohesion"
+
+  # Phase 3: Implementation
+  - id: "sprint-planning"
+    name: "Sprint Planning"
+    phase: 3
+    agent: "sm"
+    command: "sprint-planning"
+    status: "required"
+    note: "Creates sprint plan - subsequent work tracked in sprint-status.yaml"
+
