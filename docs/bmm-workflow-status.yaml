@@ -38,8 +38,8 @@ workflow_status:
     phase: 1
     agent: "pm"
     command: "prd"
-    status: "required"
-    note: "Complete PRD with functional and non-functional requirements"
+    status: "docs/prd-ecommerce-shop-phase1-ui-2025-11-30.md"
+    note: "Phase 1 PRD: UI foundation - homepage listing and product detail pages (no payment)"
 
   - id: "create-design"
     name: "UX Design"
