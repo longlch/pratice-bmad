@@ -46,7 +46,7 @@ workflow_status:
     phase: 1
     agent: "ux-designer"
     command: "create-design"
-    status: "conditional"
+    status: "docs/ux-design-specification.md"
     note: "if_has_ui - Recommended for e-commerce with user flows and checkout process"
 
   # Phase 2: Solutioning
