@@ -55,8 +55,8 @@ workflow_status:
     phase: 2
     agent: "architect"
     command: "create-architecture"
-    status: "required"
-    note: "Complete system design for payment processing, digital delivery, user management"
+    status: "docs/architecture.md"
+    note: "Phase 1 UI Foundation - Next.js 14+ with TypeScript, Tailwind, shadcn/ui"
 
   - id: "create-epics-and-stories"
     name: "Create Epics & Stories"
