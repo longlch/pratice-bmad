@@ -29,7 +29,7 @@ workflow_status:
     phase: 0
     agent: "analyst"
     command: "product-brief"
-    status: "required"
+    status: "docs/product-brief-ecommerce-shop-2025-11-30.md"
     note: "Strategic product planning - market positioning, MVP features, success metrics"
 
   # Phase 1: Planning
