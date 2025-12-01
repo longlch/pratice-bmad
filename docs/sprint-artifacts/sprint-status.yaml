@@ -46,7 +46,7 @@ development_status:
   2-1-configure-tailwind-css-with-trust-blue-theme: done  # Completed in Story 1.1 (2025-12-01)
   2-2-create-shadcn-ui-base-components-with-trust-blue-styling: done  # Completed in Story 1.1 (2025-12-01)
   2-3-create-pricedisplay-component-with-currency-formatting: done  # Completed 2025-12-01
-  2-4-create-productimage-component-with-nextjs-optimization: ready-for-dev  # Next story
+  2-4-create-productimage-component-with-nextjs-optimization: drafted  # Story created 2025-12-01
   2-5-create-errormessage-component-for-user-feedback: backlog
   epic-2-retrospective: optional
 
