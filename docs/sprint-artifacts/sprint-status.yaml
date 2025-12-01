@@ -58,7 +58,7 @@ development_status:
 
   # Epic 4: Homepage Product Listing
   epic-4: contexted  # Tech context created 2025-12-01
-  4-1-create-productcard-component-with-hover-effects: backlog
+  4-1-create-productcard-component-with-hover-effects: ready-for-dev  # Story created 2025-12-01
   4-2-create-productgrid-component-with-loading-states: backlog
   4-3-create-categoryfilter-component-with-url-state: backlog
   4-4-implement-homepage-with-hero-filter-and-product-grid: backlog
