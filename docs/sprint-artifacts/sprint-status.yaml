@@ -37,7 +37,7 @@ story_location: docs/sprint-artifacts
 
 development_status:
   # Epic 1: Foundation & Project Setup
-  epic-1: backlog
+  epic-1: contexted
   1-1-initialize-nextjs-project-with-complete-tech-stack: backlog
   epic-1-retrospective: optional
 
