@@ -5,6 +5,8 @@
  * Follow Architecture Section 13.3 (Component Structure Pattern).
  */
 
+import { Product, Category } from './product';
+
 // ============================================
 // Story 2.3: PriceDisplay Component
 // ============================================
@@ -111,4 +113,77 @@ export interface ErrorMessageProps {
    */
   className?: string;
 }
+
+// ============================================
+// Story 3.1: Product Domain Component Props
+// ============================================
+
+/**
+ * Props for ProductCard component (Epic 4)
+ */
+export interface ProductCardProps {
+  /** Product to display */
+  product: Product;
+  
+  /** Display variant for different contexts */
+  variant?: 'standard' | 'compact' | 'featured';
+  
+  /** Click handler (optional, defaults to navigate to detail page) */
+  onClick?: () => void;
+}
+
+/**
+ * Props for ProductGrid component (Epic 4)
+ */
+export interface ProductGridProps {
+  /** Array of products to display in grid */
+  products: Product[];
+  
+  /** Whether data is currently loading */
+  loading?: boolean;
+  
+  /** Message to show when products array is empty */
+  emptyMessage?: string;
+}
+
+/**
+ * Props for CategoryFilter component (Epic 4)
+ */
+export interface CategoryFilterProps {
+  /** Available categories for filtering */
+  categories: Category[];
+  
+  /** Currently active/selected category slug */
+  activeCategory: string;
+  
+  /** Callback when user selects a different category */
+  onCategoryChange: (categorySlug: string) => void;
+  
+  /** Optional product count per category for badges */
+  productCounts?: Record<string, number>;
+}
+
+// ============================================
+// Type Aliases for Union Types
+// ============================================
+
+/**
+ * Product card display variant types
+ */
+export type ProductCardVariant = 'standard' | 'compact' | 'featured';
+
+/**
+ * Currency types for price display
+ */
+export type Currency = 'USD' | 'EUR' | 'GBP';
+
+/**
+ * Display size variants for components
+ */
+export type DisplaySize = 'small' | 'large' | 'xlarge';
+
+/**
+ * Image aspect ratio types
+ */
+export type AspectRatio = '16/9' | '1/1' | '4/3';
 
