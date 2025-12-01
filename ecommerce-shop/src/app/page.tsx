@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
+import { PriceDisplay } from "@/components/product/price-display";
 
 export default function Home() {
   return (
@@ -9,11 +10,100 @@ export default function Home() {
       <main className="mx-auto max-w-6xl space-y-8">
         {/* Trust Blue Theme Verification Header */}
         <div className="space-y-4">
-          <h1 className="text-h1 text-foreground">Trust Blue Theme - Story 1.1 Complete ✓</h1>
+          <h1 className="text-h1 text-foreground">Trust Blue Theme - Stories 1.1 & 2.3 Complete ✓</h1>
           <p className="text-lg text-muted-foreground">
-            Next.js 16 with TypeScript, Tailwind CSS v4, and shadcn/ui initialized successfully.
+            Next.js 16 with TypeScript, Tailwind CSS v4, shadcn/ui, and PriceDisplay component.
           </p>
         </div>
+
+        {/* Story 2.3: PriceDisplay Component Test */}
+        <Card className="border-blue-600">
+          <CardHeader>
+            <CardTitle>Story 2.3: PriceDisplay Component</CardTitle>
+            <CardDescription>Currency formatting with Trust Blue styling and accessibility</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {/* Size Variants */}
+            <div className="space-y-3">
+              <h3 className="text-h4">Size Variants (USD)</h3>
+              <div className="flex items-end gap-6">
+                <div className="space-y-1">
+                  <p className="text-sm text-muted-foreground">Small</p>
+                  <PriceDisplay amount={49.99} size="small" />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm text-muted-foreground">Large (Default)</p>
+                  <PriceDisplay amount={49.99} size="large" />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-sm text-muted-foreground">XLarge</p>
+                  <PriceDisplay amount={49.99} size="xlarge" />
+                </div>
+              </div>
+            </div>
+
+            {/* Currency Formatting */}
+            <div className="space-y-3">
+              <h3 className="text-h4">Currency Support</h3>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="space-y-2">
+                  <p className="text-sm font-medium">USD (Default)</p>
+                  <PriceDisplay amount={49.99} currency="USD" />
+                  <PriceDisplay amount={5.00} currency="USD" size="small" />
+                  <PriceDisplay amount={199.99} currency="USD" size="small" />
+                </div>
+                <div className="space-y-2">
+                  <p className="text-sm font-medium">EUR</p>
+                  <PriceDisplay amount={49.99} currency="EUR" />
+                  <PriceDisplay amount={5.00} currency="EUR" size="small" />
+                  <PriceDisplay amount={199.99} currency="EUR" size="small" />
+                </div>
+                <div className="space-y-2">
+                  <p className="text-sm font-medium">GBP</p>
+                  <PriceDisplay amount={49.99} currency="GBP" />
+                  <PriceDisplay amount={5.00} currency="GBP" size="small" />
+                  <PriceDisplay amount={199.99} currency="GBP" size="small" />
+                </div>
+              </div>
+            </div>
+
+            {/* Real-world Examples */}
+            <div className="space-y-3">
+              <h3 className="text-h4">Product Card Examples</h3>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+                <Card>
+                  <CardContent className="p-4 space-y-2">
+                    <div className="h-32 bg-slate-200 rounded"></div>
+                    <h4 className="font-semibold">Premium Software License</h4>
+                    <PriceDisplay amount={99.99} size="large" />
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="p-4 space-y-2">
+                    <div className="h-32 bg-slate-200 rounded"></div>
+                    <h4 className="font-semibold">Game Key - AAA Title</h4>
+                    <PriceDisplay amount={59.99} size="large" />
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="p-4 space-y-2">
+                    <div className="h-32 bg-slate-200 rounded"></div>
+                    <h4 className="font-semibold">AI Tool Subscription</h4>
+                    <PriceDisplay amount={29.99} size="large" />
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            {/* Accessibility Note */}
+            <div className="rounded-lg bg-blue-50 p-4">
+              <p className="text-sm text-blue-900">
+                <strong>✓ Accessibility:</strong> Each price includes an ARIA label (e.g., "Price: $49.99") 
+                for screen readers. Inspect the element to see the aria-label attribute.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Typography Scale Test */}
         <Card>
