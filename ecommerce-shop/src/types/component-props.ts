@@ -36,3 +36,51 @@ export interface PriceDisplayProps {
   className?: string;
 }
 
+// ============================================
+// Story 2.4: ProductImage Component
+// ============================================
+
+export interface ProductImageProps {
+  /**
+   * Image source URL or path
+   * For Phase 1, use placeholder.co URLs or public/images/products paths
+   * @example "https://placehold.co/800x450/2563eb/ffffff?text=Product"
+   * @example "/images/products/premium-game-pass.jpg"
+   */
+  src: string;
+  
+  /**
+   * Accessibility alt text (required for WCAG AA compliance)
+   * Format: "{product.name} - {product.category}"
+   * Use empty string alt="" for decorative images
+   * @example "Premium Game Pass - Games"
+   */
+  alt: string;
+  
+  /**
+   * Optional category for badge overlay (future enhancement)
+   */
+  category?: string;
+  
+  /**
+   * Image aspect ratio
+   * - 16/9: Default for product cards and detail images (800x450px)
+   * - 1/1: Square thumbnails (800x800px)
+   * - 4/3: Alternative layout (800x600px)
+   * @default '16/9'
+   */
+  aspectRatio?: '16/9' | '1/1' | '4/3';
+  
+  /**
+   * Priority loading for above-fold images (LCP optimization)
+   * Set to true for hero images and first product cards
+   * @default false
+   */
+  priority?: boolean;
+  
+  /**
+   * Additional CSS classes for custom styling
+   */
+  className?: string;
+}
+
