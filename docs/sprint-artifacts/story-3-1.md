@@ -1,6 +1,6 @@
 # Story 3.1: Define TypeScript Types for Product Domain
 
-Status: drafted
+Status: ready-for-dev
 
 ## Story
 
