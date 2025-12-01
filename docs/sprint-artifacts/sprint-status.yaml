@@ -60,7 +60,7 @@ development_status:
   epic-4: contexted  # Tech context created 2025-12-01
   4-1-create-productcard-component-with-hover-effects: done  # Completed 2025-12-01
   4-2-create-productgrid-component-with-loading-states: done  # Completed 2025-12-01
-  4-3-create-categoryfilter-component-with-url-state: backlog
+  4-3-create-categoryfilter-component-with-url-state: done  # Completed 2025-12-01
   4-4-implement-homepage-with-hero-filter-and-product-grid: backlog
   epic-4-retrospective: optional
 

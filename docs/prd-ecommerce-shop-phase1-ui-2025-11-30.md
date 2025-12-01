@@ -722,3 +722,4 @@ _Payment, cart, and account features are explicitly deferred to future phases._
 
 _Next: Architecture workflow to design the technical implementation._
 
+
