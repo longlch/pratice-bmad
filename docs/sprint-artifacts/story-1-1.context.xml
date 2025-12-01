@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Story Context: Story 1.1 - Initialize Next.js Project with Complete Tech Stack
+  Generated: 2025-12-01
+  Workflow: story-context
+  Project: ecommerce-shop
+  Epic: Epic 1 - Foundation & Project Setup
+  
+  This context document aggregates all relevant documentation for implementing Story 1.1.
+  Dev agents should reference this as the authoritative source of truth during implementation.
+-->
+
+<story-context>
+  <metadata>
+    <story-id>1-1</story-id>
+    <story-key>1-1-initialize-nextjs-project-with-complete-tech-stack</story-key>
+    <story-file>docs/sprint-artifacts/story-1-1.md</story-file>
+    <epic-id>epic-1</epic-id>
+    <epic-name>Foundation &amp; Project Setup</epic-name>
+    <status>drafted</status>
+    <generated-date>2025-12-01</generated-date>
+    <project>ecommerce-shop</project>
+  </metadata>
+
+  <!-- =============================================== -->
+  <!-- STORY DEFINITION -->
+  <!-- =============================================== -->
+  
+  <story>
+    <title>Initialize Next.js Project with Complete Tech Stack</title>
+    
+    <user-story>
+      As a developer,
+      I want the Next.js 14+ project initialized with TypeScript, Tailwind CSS, shadcn/ui, and proper directory structure,
+      So that all subsequent stories have a working foundation to build upon.
+    </user-story>
+    
+    <acceptance-criteria>
+      <criterion id="AC-1">
+        <name>Next.js Project Initialized</name>
+        <given>no existing project</given>
+        <when>I run the initialization commands</when>
+        <then>
+          A Next.js 14+ project is created with:
+          - TypeScript 5.x configured
+          - Tailwind CSS 3.x installed and configured
+          - App Router enabled (not Pages Router)
+          - src/ directory structure created
+          - Path aliases configured (@/components, @/lib, @/types)
+        </then>
+      </criterion>
+      
+      <criterion id="AC-2">
+        <name>shadcn/ui Initialization</name>
+        <and>
+          shadcn/ui is initialized with:
+          - components.json configuration file
+          - Trust Blue theme configured in tailwind.config.ts
+          - Base components installed (Button, Card, Badge, Skeleton)
+          - Slate color palette configured as base color
+        </and>
+      </criterion>
+      
+      <criterion id="AC-3">
+        <name>Directory Structure Created</name>
+        <and>
+          The following directory structure exists:
+          src/
+            app/
+              layout.tsx (basic structure)
+              page.tsx (placeholder)
+              globals.css (Tailwind directives + Trust Blue theme)
+            components/
+              ui/ (shadcn/ui components)
+              product/ (empty, ready for stories)
+              layout/ (empty, ready for stories)
+              filters/ (empty, ready for stories)
+            lib/
+              utils.ts (cn() utility from shadcn/ui)
+            types/ (empty, ready for type definitions)
+            data/ (empty, ready for JSON files)
+          public/
+            images/
+              products/ (empty, ready for product images)
+        </and>
+      </criterion>
+      
+      <criterion id="AC-4">
+        <name>Trust Blue Theme Configured</name>
+        <and>
+          Trust Blue theme colors are configured in tailwind.config.ts:
+          - Primary: #2563eb (blue-600)
+          - Primary hover: #1d4ed8 (blue-700)
+          - Slate neutral scale (50-900)
+          - Custom typography scale (display, h1-h4)
+        </and>
+      </criterion>
+      
+      <criterion id="AC-5">
+        <name>Development Server Verification</name>
+        <and>
+          The development server starts successfully:
+          - `npm run dev` runs without errors
+          - Accessible at http://localhost:3000
+          - Hot module reloading works
+          - No console errors
+        </and>
+      </criterion>
+      
+      <criterion id="AC-6">
+        <name>Build Process Verification</name>
+        <and>
+          Build process works:
+          - `npm run build` completes successfully
+          - TypeScript compilation passes
+          - No linting errors
+        </and>
+      </criterion>
+    </acceptance-criteria>
+
+    <implementation-commands>
+      <command-sequence>
+        <step order="1">
+          <description>Initialize Next.js project</description>
+          <command>npx create-next-app@latest ecommerce-shop --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"</command>
+        </step>
+        
+        <step order="2">
+          <description>Navigate to project directory</description>
+          <command>cd ecommerce-shop</command>
+        </step>
+        
+        <step order="3">
+          <description>Initialize shadcn/ui (Interactive prompts: Default style, Slate base color, Yes to CSS variables)</description>
+          <command>npx shadcn@latest init</command>
+        </step>
+        
+        <step order="4">
+          <description>Add shadcn/ui base components</description>
+          <command>npx shadcn@latest add button card badge skeleton</command>
+        </step>
+        
+        <step order="5">
+          <description>Create directory structure</description>
+          <command>mkdir -p src/components/{product,layout,filters}</command>
+          <command>mkdir -p src/{types,data}</command>
+          <command>mkdir -p public/images/products</command>
+        </step>
+        
+        <step order="6">
+          <description>Configure Trust Blue theme (manual editing of tailwind.config.ts and globals.css)</description>
+          <manual-edit>tailwind.config.ts</manual-edit>
+          <manual-edit>src/app/globals.css</manual-edit>
+        </step>
+        
+        <step order="7">
+          <description>Verify setup</description>
+          <command>npm run dev</command>
+          <command>npm run build</command>
+          <command>npm run lint</command>
+        </step>
+      </command-sequence>
+    </implementation-commands>
+  </story>
+
+  <!-- =============================================== -->
+  <!-- EPIC CONTEXT -->
+  <!-- =============================================== -->
+  
+  <epic>
+    <id>epic-1</id>
+    <name>Foundation &amp; Project Setup</name>
+    
+    <goal>
+      Initialize Next.js 14+ project with TypeScript, Tailwind CSS, shadcn/ui, and proper project structure 
+      to enable all subsequent development.
+    </goal>
+    
+    <user-value>
+      Establishes the technical foundation required for all features. (Foundation exception - acceptable 
+      as first epic for greenfield project)
+    </user-value>
+    
+    <covers-functional-requirements>
+      Infrastructure foundation for all functional requirements
+    </covers-functional-requirements>
+    
+    <stories>
+      <story-ref id="1-1">Initialize Next.js Project with Complete Tech Stack (THIS STORY)</story-ref>
+    </stories>
+    
+    <success-criteria>
+      A developer can run `npm run dev`, access http://localhost:3000, and see a working Next.js 
+      application with the Trust Blue theme applied and zero TypeScript/lint errors.
+    </success-criteria>
+  </epic>
+
+  <!-- =============================================== -->
+  <!-- ARCHITECTURE REFERENCE -->
+  <!-- =============================================== -->
+  
+  <architecture>
+    <source>docs/architecture.md</source>
+    
+    <project-initialization>
+      <starter-template>
+        <name>Next.js 14+ with App Router</name>
+        <init-command>npx create-next-app@latest ecommerce-shop --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"</init-command>
+        
+        <provides>
+          - Next.js 14+ with React 18+
+          - TypeScript configuration
+          - Tailwind CSS setup
+          - App Router (modern Next.js architecture)
+          - ESLint for code quality
+          - src/ directory structure
+          - Path aliases (@/components, @/lib, @/types)
+          - Fast Refresh development server
+          - Production-optimized build system
+        </provides>
+        
+        <post-init-steps>
+          1. Install shadcn/ui: `npx shadcn@latest init`
+          2. Configure Trust Blue theme in `tailwind.config.ts`
+          3. Add initial shadcn/ui components: `npx shadcn@latest add button card badge`
+        </post-init-steps>
+      </starter-template>
+      
+      <technology-versions>
+        <technology name="Next.js" version="14.x (latest stable)" purpose="React framework with App Router"/>
+        <technology name="React" version="18.x" purpose="UI library with Server Components"/>
+        <technology name="TypeScript" version="5.x" purpose="Type safety and developer experience"/>
+        <technology name="Tailwind CSS" version="3.x" purpose="Utility-first CSS framework"/>
+        <technology name="shadcn/ui" version="Latest" purpose="Accessible component primitives"/>
+      </technology-versions>
+      
+      <version-rationale>
+        - Next.js 14+ provides App Router, Server Components, and optimized images critical for product catalog performance
+        - React 18+ enables Server Components for better initial page load
+        - TypeScript 5.x offers improved type inference and performance
+        - Tailwind CSS 3.x provides JIT compilation for smaller bundle sizes
+        - shadcn/ui uses latest Radix UI primitives for WCAG AA accessibility
+      </version-rationale>
+    </project-initialization>
+    
+    <directory-structure>
+      <pattern>Domain-based component organization</pattern>
+      
+      <structure>
+        ecommerce-shop/
+        ├── src/
+        │   ├── app/                    # Next.js App Router
+        │   │   ├── layout.tsx         # Root layout (header/footer)
+        │   │   ├── page.tsx           # Homepage (product grid)
+        │   │   └── globals.css        # Tailwind + custom styles
+        │   ├── components/             # Organized by domain
+        │   │   ├── ui/                # shadcn/ui components
+        │   │   ├── product/           # Product-specific components
+        │   │   ├── layout/            # Layout components
+        │   │   └── filters/           # Filtering components
+        │   ├── lib/                   # Utilities &amp; helpers
+        │   │   └── utils.ts           # shadcn/ui cn() utility
+        │   ├── types/                 # TypeScript type definitions
+        │   └── data/                  # Static data (Phase 1)
+        ├── public/                    # Static assets
+        │   └── images/                # Product images
+        └── [config files]
+      </structure>
+      
+      <rationale>
+        - Easy to locate components by feature
+        - Clear separation of concerns
+        - Scales well when adding new domains (cart, checkout in Phase 2)
+        - AI agents know exactly where to create new components
+        - src/ directory separates source code from configuration files
+        - data/ for static JSON provides single source of truth for Phase 1 product data
+      </rationale>
+    </directory-structure>
+    
+    <naming-conventions>
+      <files>kebab-case (e.g., `product-card.tsx`)</files>
+      <components>PascalCase (e.g., `ProductCard`)</components>
+      <directories>kebab-case (e.g., `components/product/`)</directories>
+    </naming-conventions>
+    
+    <path-aliases>
+      <alias from="@/components" to="src/components"/>
+      <alias from="@/lib" to="src/lib"/>
+      <alias from="@/types" to="src/types"/>
+      <alias from="@/data" to="src/data"/>
+    </path-aliases>
+    
+    <theme-configuration>
+      <name>Trust Blue Theme</name>
+      <colors>
+        <primary>#2563eb (blue-600)</primary>
+        <primary-hover>#1d4ed8 (blue-700)</primary-hover>
+        <background>Slate-50 (#f8fafc)</background>
+        <text>Slate-900 (#0f172a)</text>
+        <text-secondary>Slate-600 (#475569)</text-secondary>
+      </colors>
+      
+      <rationale>
+        Trust Blue communicates professionalism and credibility - essential for a digital goods 
+        marketplace where users can't physically inspect products. The blue palette signals 
+        security and reliability, while maintaining a modern, clean aesthetic.
+      </rationale>
+    </theme-configuration>
+    
+    <architectural-constraints>
+      <constraint>Next.js 14+ App Router architecture required (no Pages Router)</constraint>
+      <constraint>TypeScript strict mode enabled (no `any` types)</constraint>
+      <constraint>src/ directory pattern must be used</constraint>
+      <constraint>shadcn/ui copy-paste approach (no full component library dependency)</constraint>
+    </architectural-constraints>
+  </architecture>
+
+  <!-- =============================================== -->
+  <!-- TECHNICAL SPECIFICATION -->
+  <!-- =============================================== -->
+  
+  <technical-specification>
+    <source>docs/sprint-artifacts/tech-spec-epic-1.md</source>
+    
+    <overview>
+      Epic 1 establishes the complete technical foundation for the ecommerce-shop Phase 1 UI implementation. 
+      This epic initializes a Next.js 14+ project with TypeScript, Tailwind CSS, and shadcn/ui component 
+      library, configures the Trust Blue design system, and creates the project structure that will support 
+      all subsequent feature development.
+    </overview>
+    
+    <scope>
+      <in-scope>
+        - Next.js 14+ project initialization with App Router architecture
+        - TypeScript 5.x configuration with strict type checking
+        - Tailwind CSS 3.x installation and Trust Blue theme configuration
+        - shadcn/ui component library initialization (Button, Card, Badge, Skeleton)
+        - Complete project directory structure creation (src/app, src/components, src/types, src/lib, src/data)
+        - Path aliases configuration (@/components, @/lib, @/types)
+        - Development server setup and verification
+        - Production build pipeline verification
+        - ESLint and code quality tooling
+      </in-scope>
+      
+      <out-of-scope>
+        - Product data models and sample data (Epic 3)
+        - UI component implementation (Epic 2)
+        - Page layouts and routing (Epics 4-5)
+        - Testing infrastructure (Phase 2)
+        - Deployment configuration (Epic 6 polish phase)
+      </out-of-scope>
+    </scope>
+    
+    <setup-workflow>
+      <step order="1">
+        <name>Initialize Next.js Project</name>
+        <command>npx create-next-app@latest ecommerce-shop</command>
+        <prompts>
+          - TypeScript? Yes
+          - Tailwind? Yes
+          - App Router? Yes
+          - src/ directory? Yes
+          - Import alias? @/*
+        </prompts>
+        <output>Next.js project created in /ecommerce-shop</output>
+        <duration>~2 minutes (npm install)</duration>
+      </step>
+      
+      <step order="2">
+        <name>Initialize shadcn/ui</name>
+        <command>npx shadcn@latest init</command>
+        <prompts>
+          - Style? Default
+          - Base color? Slate
+          - CSS variables? Yes
+        </prompts>
+        <creates>
+          - components.json
+          - Updates tailwind.config.ts
+        </creates>
+        <command>npx shadcn@latest add button card badge skeleton</command>
+        <output>4 components in src/components/ui/</output>
+      </step>
+      
+      <step order="3">
+        <name>Create Directory Structure</name>
+        <commands>
+          - mkdir -p src/components/product
+          - mkdir -p src/components/layout
+          - mkdir -p src/components/filters
+          - mkdir -p src/types
+          - mkdir -p src/data
+          - mkdir -p public/images/products
+        </commands>
+      </step>
+      
+      <step order="4">
+        <name>Configure Trust Blue Theme</name>
+        <edit-file>tailwind.config.ts (add primary colors)</edit-file>
+        <edit-file>src/app/globals.css (add Trust Blue gradients)</edit-file>
+        <verify>Colors work with shadcn/ui components</verify>
+      </step>
+      
+      <step order="5">
+        <name>Verification</name>
+        <command>npm run dev</command>
+        <verify>http://localhost:3000 loads without errors</verify>
+        <command>npm run build</command>
+        <verify>TypeScript compiles, no linting errors</verify>
+        <verify>Hot reload works when editing files</verify>
+      </step>
+    </setup-workflow>
+    
+    <critical-path>
+      1. Next.js project must be created before shadcn/ui initialization
+      2. shadcn/ui must be initialized before adding components
+      3. Directory structure must exist before starting Epic 2 stories
+      4. Trust Blue theme must be configured before component development
+    </critical-path>
+    
+    <performance-targets>
+      <metric name="Initial Page Load" target="&lt; 500ms" rationale="Empty Next.js app, minimal bundle"/>
+      <metric name="Hot Reload Time" target="&lt; 200ms" rationale="Fast feedback during development"/>
+      <metric name="Build Time" target="&lt; 30 seconds" rationale="Quick CI/CD pipeline"/>
+      <metric name="Dev Server Startup" target="&lt; 5 seconds" rationale="Fast local development startup"/>
+    </performance-targets>
+    
+    <validation-checklist>
+      <item>✓ package.json shows Next.js 14.x or higher</item>
+      <item>✓ package.json shows React 18.x or higher</item>
+      <item>✓ package.json shows TypeScript 5.x or higher</item>
+      <item>✓ src/ directory exists with app/, components/, lib/, types/, data/</item>
+      <item>✓ components.json exists (shadcn/ui configuration)</item>
+      <item>✓ src/components/ui/ contains Button, Card, Badge, Skeleton</item>
+      <item>✓ src/lib/utils.ts exists with cn() function</item>
+      <item>✓ tailwind.config.ts contains Trust Blue colors</item>
+      <item>✓ `npm run dev` starts without errors</item>
+      <item>✓ http://localhost:3000 is accessible</item>
+      <item>✓ Browser console shows no errors</item>
+      <item>✓ Hot reload works when editing page.tsx</item>
+      <item>✓ `npm run build` completes successfully</item>
+      <item>✓ `npm run lint` shows zero errors</item>
+    </validation-checklist>
+  </technical-specification>
+
+  <!-- =============================================== -->
+  <!-- UX DESIGN CONTEXT -->
+  <!-- =============================================== -->
+  
+  <ux-design>
+    <source>docs/ux-design-specification.md</source>
+    
+    <design-system>
+      <name>shadcn/ui</name>
+      <rationale>
+        Modern, Tailwind CSS-based component library that aligns perfectly with "Trustworthy &amp; Modern" 
+        aesthetic. Provides clean, polished components with accessibility built-in (WCAG compliant).
+      </rationale>
+      
+      <benefits>
+        - Modern &amp; Professional appearance
+        - Highly customizable (copy-paste with full control)
+        - Tailwind CSS integration for fast development
+        - Excellent for e-commerce (card layouts, grids)
+        - Next.js integration
+        - Active development and maintenance
+      </benefits>
+    </design-system>
+    
+    <color-theme>
+      <name>Trust Blue</name>
+      <emotion>Trustworthy &amp; Modern</emotion>
+      
+      <palette>
+        <primary>#2563eb (Blue 600) - Main actions, key elements, CTAs</primary>
+        <primary-hover>#1d4ed8 (Blue 700) - Interactive hover states</primary-hover>
+        <primary-light>#3b82f6 (Blue 500) - Secondary elements, accents</primary-light>
+        
+        <semantic>
+          <success>#10b981 (Green 500) - Success messages, positive feedback</success>
+          <warning>#f59e0b (Amber 500) - Warnings, caution states</warning>
+          <error>#ef4444 (Red 500) - Errors, destructive actions</error>
+        </semantic>
+        
+        <neutral>
+          Slate scale (50-900) for backgrounds, text, borders
+        </neutral>
+      </palette>
+      
+      <rationale>
+        Trust Blue communicates professionalism and credibility - essential for digital goods marketplace 
+        where users can't physically inspect products. Blue palette signals security and reliability while 
+        maintaining modern, clean aesthetic.
+      </rationale>
+    </color-theme>
+    
+    <typography>
+      <font-family>Inter (primary), system fallbacks</font-family>
+      <scale>
+        <display>3rem (48px) - Hero sections</display>
+        <h1>2.25rem (36px) - Page titles</h1>
+        <h2>1.875rem (30px) - Section headings</h2>
+        <h3>1.5rem (24px) - Component titles</h3>
+        <h4>1.25rem (20px) - Card headings</h4>
+        <body>1rem (16px) - Default text</body>
+        <small>0.875rem (14px) - Secondary text, captions</small>
+      </scale>
+    </typography>
+    
+    <spacing-system>
+      - 4px base unit (Tailwind default)
+      - Consistent padding/margin using Tailwind spacing scale
+      - Component spacing: p-4 (16px) standard, p-6 (24px) for cards
+    </spacing-system>
+  </ux-design>
+
+  <!-- =============================================== -->
+  <!-- PRD REFERENCE -->
+  <!-- =============================================== -->
+  
+  <prd-reference>
+    <source>docs/prd-ecommerce-shop-phase1-ui-2025-11-30.md</source>
+    
+    <phase-scope>
+      Phase 1: Product listing homepage + Product detail pages + Navigation
+      (No cart, checkout, or payment functionality)
+    </phase-scope>
+    
+    <objectives>
+      1. Visual Foundation: Establish modern, clean UI design system
+      2. Product Discovery: Enable users to browse and explore digital products
+      3. Information Display: Present product details clearly and attractively
+      4. Navigation Patterns: Implement intuitive navigation
+      5. Responsive Design: Excellent experience on desktop and mobile
+    </objectives>
+    
+    <success-criteria>
+      - Homepage displays categorized product listings
+      - Users can navigate from homepage to product detail pages
+      - Product detail pages show comprehensive information
+      - UI is responsive (mobile and desktop)
+      - Page load times &lt; 2 seconds
+      - Clean, professional visual design
+    </success-criteria>
+    
+    <non-functional-requirements>
+      <performance>
+        - Page load time &lt; 2 seconds
+        - Smooth 60fps interactions
+      </performance>
+      
+      <responsive-design>
+        - Mobile/tablet/desktop breakpoints
+        - Touch-friendly on mobile
+      </responsive-design>
+      
+      <accessibility>
+        - WCAG AA compliance
+        - Keyboard navigation
+        - Screen reader support
+      </accessibility>
+      
+      <design>
+        - Professional modern aesthetic
+        - Trust Blue theme
+        - Consistent visual language
+      </design>
+    </non-functional-requirements>
+  </prd-reference>
+
+  <!-- =============================================== -->
+  <!-- PRODUCT BRIEF CONTEXT -->
+  <!-- =============================================== -->
+  
+  <product-brief>
+    <source>docs/product-brief-ecommerce-shop-2025-11-30.md</source>
+    
+    <vision>
+      A digital goods marketplace for the US market that enables instant purchase and delivery of 
+      software licenses, game keys, AI subscriptions, and digital tools. Clean, modern UX optimized 
+      for speed and simplicity.
+    </vision>
+    
+    <target-users>
+      Digital Product Consumers (US Market) - Age 18-45, tech-comfortable individuals who value 
+      convenience and instant access. Gamers, professionals, students, AI enthusiasts, small businesses.
+    </target-users>
+    
+    <phase-1-focus>
+      UI Foundation - Product browsing experience without payment/checkout. Establish visual design, 
+      information architecture, and navigation patterns for future commerce functionality.
+    </phase-1-focus>
+  </product-brief>
+
+  <!-- =============================================== -->
+  <!-- DEPENDENCIES AND PREREQUISITES -->
+  <!-- =============================================== -->
+  
+  <dependencies>
+    <prerequisite>
+      <name>Node.js 18+</name>
+      <required>true</required>
+      <reason>Required by Next.js 14+</reason>
+    </prerequisite>
+    
+    <prerequisite>
+      <name>npm or yarn</name>
+      <required>true</required>
+      <reason>Package management and dependency installation</reason>
+    </prerequisite>
+    
+    <prerequisite>
+      <name>Internet connection</name>
+      <required>true</required>
+      <reason>Download dependencies during initialization</reason>
+    </prerequisite>
+    
+    <blocking-dependencies>
+      None - This is the first story in the project
+    </blocking-dependencies>
+    
+    <enables-stories>
+      - Story 2.1: Configure Tailwind CSS with Trust Blue Theme
+      - Story 2.2: Create shadcn/ui Base Components
+      - All subsequent Epic 2+ stories
+    </enables-stories>
+  </dependencies>
+
+  <!-- =============================================== -->
+  <!-- TESTING APPROACH -->
+  <!-- =============================================== -->
+  
+  <testing>
+    <approach>Manual Verification (Primary for Story 1.1)</approach>
+    
+    <verification-steps>
+      <step order="1">
+        <name>Project Structure Check</name>
+        <commands>
+          ls -la ecommerce-shop/
+          cat package.json | grep "next"  # Verify 14.x
+        </commands>
+      </step>
+      
+      <step order="2">
+        <name>Development Server Test</name>
+        <commands>npm run dev</commands>
+        <verify>
+          - Open http://localhost:3000
+          - No errors in browser console
+          - Next.js welcome page displays
+        </verify>
+      </step>
+      
+      <step order="3">
+        <name>Hot Reload Test</name>
+        <action>Edit src/app/page.tsx (change text)</action>
+        <verify>Browser updates without refresh</verify>
+      </step>
+      
+      <step order="4">
+        <name>Build Verification</name>
+        <command>npm run build</command>
+        <verify>
+          - No TypeScript errors
+          - Build completes successfully
+        </verify>
+      </step>
+      
+      <step order="5">
+        <name>Component Verification</name>
+        <action>Temporarily import Button in page.tsx</action>
+        <verify>
+          - Component renders correctly
+          - Trust Blue styling applied
+        </verify>
+      </step>
+    </verification-steps>
+    
+    <acceptance>
+      - All 6 AC sections pass manual verification
+      - Zero TypeScript compilation errors
+      - Zero ESLint errors
+      - Development server starts and hot reload works
+      - Production build completes successfully
+    </acceptance>
+  </testing>
+
+  <!-- =============================================== -->
+  <!-- KNOWN CONSTRAINTS -->
+  <!-- =============================================== -->
+  
+  <constraints>
+    <phase-1-limitations>
+      - No backend/API integration (static data only)
+      - No user authentication (deferred to Phase 2)
+      - No shopping cart functionality (deferred to Phase 2)
+      - No payment processing (deferred to Phase 2)
+    </phase-1-limitations>
+    
+    <browser-support>
+      - Modern browsers only (Chrome, Firefox, Safari latest)
+      - No IE11 support
+    </browser-support>
+    
+    <environment-requirements>
+      - Node.js 18+ must be pre-installed
+      - Compatible with macOS, Linux, Windows (with WSL recommended)
+      - Requires stable internet connection for npm install
+    </environment-requirements>
+  </constraints>
+
+  <!-- =============================================== -->
+  <!-- TECHNICAL DEBT / FUTURE CONSIDERATIONS -->
+  <!-- =============================================== -->
+  
+  <future-considerations>
+    <to-address-in-later-phases>
+      - Testing framework setup (Phase 2)
+      - CI/CD pipeline configuration (Phase 2)
+      - Environment variable management (Phase 2)
+      - Production deployment configuration (Phase 2)
+      - Analytics integration (Phase 2)
+      - Monitoring/observability setup (Phase 2)
+    </to-address-in-later-phases>
+    
+    <phase-2-preparation>
+      - .env.local already in .gitignore (ready for API keys)
+      - Dark mode configured in tailwind but not implemented (ready for toggle)
+      - Component structure ready to add state management if needed
+    </phase-2-preparation>
+  </future-considerations>
+
+  <!-- =============================================== -->
+  <!-- IMPLEMENTATION NOTES -->
+  <!-- =============================================== -->
+  
+  <implementation-notes>
+    <key-decisions>
+      <decision>
+        <what>Use Next.js 14+ App Router (not Pages Router)</what>
+        <why>Server Components for better performance, modern architecture, Phase 2 ready</why>
+      </decision>
+      
+      <decision>
+        <what>Use TypeScript strict mode</what>
+        <why>Prevent runtime errors, better autocomplete, team consistency</why>
+      </decision>
+      
+      <decision>
+        <what>Use src/ directory pattern</what>
+        <why>Clean root directory, standard Next.js pattern</why>
+      </decision>
+      
+      <decision>
+        <what>Use shadcn/ui copy-paste approach</what>
+        <why>Full code ownership, easier Trust Blue customization, no large dependencies</why>
+      </decision>
+    </key-decisions>
+    
+    <gotchas>
+      <item>Make sure to select "Slate" as base color during shadcn/ui init (not blue)</item>
+      <item>Trust Blue theme requires manual configuration in tailwind.config.ts after init</item>
+      <item>shadcn/ui components must be added AFTER initialization is complete</item>
+      <item>Directory structure should be created before starting Epic 2 work</item>
+    </gotchas>
+    
+    <next-story-handoff>
+      After Story 1.1 completion, the next developer should be able to immediately start Story 2.1 
+      (Tailwind configuration) without any additional setup steps. Verify that:
+      - Project builds successfully
+      - All directories exist
+      - shadcn/ui components are accessible
+      - Trust Blue theme is partially configured (will be completed in 2.1)
+    </next-story-handoff>
+  </implementation-notes>
+
+  <!-- =============================================== -->
+  <!-- DOCUMENT REFERENCES -->
+  <!-- =============================================== -->
+  
+  <references>
+    <document>
+      <name>Architecture Document</name>
+      <path>docs/architecture.md</path>
+      <relevant-sections>
+        - Section 1.1: Starter Template (initialization command)
+        - Section 1.2: Technology Stack Versions (version requirements)
+        - Section 2.1: Directory Organization (complete structure)
+        - Section 2.2: Structure Rationale (organization benefits)
+        - Section 5.1: File Naming (kebab-case convention)
+        - Section 12.1: Tailwind Configuration (Trust Blue theme)
+        - Section 12.2: Global Styles (globals.css configuration)
+        - Section 12.3: shadcn/ui Configuration (component initialization)
+      </relevant-sections>
+    </document>
+    
+    <document>
+      <name>Technical Specification - Epic 1</name>
+      <path>docs/sprint-artifacts/tech-spec-epic-1.md</path>
+      <relevant-sections>
+        - Overview: Epic goals and success criteria
+        - Detailed Design: Module structure and dependencies
+        - Dependencies and Integrations: NPM package manifest
+        - Acceptance Criteria: Complete AC list (AC-1 through AC-10)
+        - Workflows and Sequencing: Step-by-step setup workflow
+        - Story Breakdown: Story 1.1 implementation steps
+      </relevant-sections>
+    </document>
+    
+    <document>
+      <name>Epic Breakdown</name>
+      <path>docs/epics.md</path>
+      <relevant-sections>
+        - Epic 1 Overview (lines 80-89)
+        - Story 1.1 (lines 91-169)
+      </relevant-sections>
+    </document>
+    
+    <document>
+      <name>PRD</name>
+      <path>docs/prd-ecommerce-shop-phase1-ui-2025-11-30.md</path>
+      <relevant-sections>
+        - Section 1.2: Phase 1 Objectives (visual foundation, responsive design)
+        - Section 5: Non-Functional Requirements (performance, accessibility targets)
+      </relevant-sections>
+    </document>
+    
+    <document>
+      <name>UX Design Specification</name>
+      <path>docs/ux-design-specification.md</path>
+      <relevant-sections>
+        - Section 1.1: Design System Choice (shadcn/ui rationale)
+        - Section 3.1: Color System (Trust Blue palette)
+        - Section 3.2: Typography (font scales and families)
+      </relevant-sections>
+    </document>
+    
+    <document>
+      <name>Product Brief</name>
+      <path>docs/product-brief-ecommerce-shop-2025-11-30.md</path>
+      <relevant-sections>
+        - Core Vision: Project objectives
+        - Target Users: User profiles and needs
+        - MVP Scope: Phase 1 feature boundaries
+      </relevant-sections>
+    </document>
+  </references>
+</story-context>
+
