@@ -1,0 +1,80 @@
+# generated: 2025-12-01
+# project: ecommerce-shop
+# project_key: ecommerce-shop
+# tracking_system: file-system
+# story_location: docs/sprint-artifacts
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic exists in epic file but not contexted
+#   - contexted: Epic tech context created (required before drafting stories)
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - drafted: Story file created in stories folder
+#   - ready-for-dev: Draft approved and story context created
+#   - in-progress: Developer actively working on implementation
+#   - review: Under SM review (via code-review workflow)
+#   - done: Story completed
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - completed: Retrospective has been done
+#
+# WORKFLOW NOTES:
+# ===============
+# - Epics should be 'contexted' before stories can be 'drafted'
+# - Stories can be worked in parallel if team capacity allows
+# - SM typically drafts next story after previous one is 'done' to incorporate learnings
+# - Dev moves story to 'review', SM reviews, then Dev moves to 'done'
+
+generated: 2025-12-01
+project: ecommerce-shop
+project_key: ecommerce-shop
+tracking_system: file-system
+story_location: docs/sprint-artifacts
+
+development_status:
+  # Epic 1: Foundation & Project Setup
+  epic-1: backlog
+  1-1-initialize-nextjs-project-with-complete-tech-stack: backlog
+  epic-1-retrospective: optional
+
+  # Epic 2: Design System & UI Components
+  epic-2: backlog
+  2-1-configure-tailwind-css-with-trust-blue-theme: backlog
+  2-2-create-shadcn-ui-base-components-with-trust-blue-styling: backlog
+  2-3-create-pricedisplay-component-with-currency-formatting: backlog
+  2-4-create-productimage-component-with-nextjs-optimization: backlog
+  2-5-create-errormessage-component-for-user-feedback: backlog
+  epic-2-retrospective: optional
+
+  # Epic 3: Product Data & Type System
+  epic-3: backlog
+  3-1-define-typescript-types-for-product-domain: backlog
+  3-2-create-sample-product-catalog-with-24-products: backlog
+  epic-3-retrospective: optional
+
+  # Epic 4: Homepage Product Listing
+  epic-4: backlog
+  4-1-create-productcard-component-with-hover-effects: backlog
+  4-2-create-productgrid-component-with-loading-states: backlog
+  4-3-create-categoryfilter-component-with-url-state: backlog
+  4-4-implement-homepage-with-hero-filter-and-product-grid: backlog
+  epic-4-retrospective: optional
+
+  # Epic 5: Product Detail Pages
+  epic-5: backlog
+  5-1-create-productdetail-component-with-full-information: backlog
+  5-2-create-breadcrumb-navigation-component: backlog
+  5-3-implement-product-detail-page-with-dynamic-routing: backlog
+  epic-5-retrospective: optional
+
+  # Epic 6: Navigation & Polish
+  epic-6: backlog
+  6-1-create-header-and-footer-components: backlog
+  6-2-update-root-layout-with-header-and-footer: backlog
+  6-3-add-loading-states-and-error-boundaries: backlog
+  epic-6-retrospective: optional
+
