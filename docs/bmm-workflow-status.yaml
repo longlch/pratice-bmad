@@ -63,8 +63,8 @@ workflow_status:
     phase: 2
     agent: "pm"
     command: "create-epics-and-stories"
-    status: "required"
-    note: "Break down PRD into implementable epics and stories with full context"
+    status: "docs/epics.md"
+    note: "18 stories across 6 epics - incorporates PRD + UX + Architecture context"
 
   - id: "test-design"
     name: "Test Design"
