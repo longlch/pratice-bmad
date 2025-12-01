@@ -5,8 +5,9 @@
 **Story Type:** Feature Implementation  
 **Priority:** High  
 **Estimated Effort:** Medium (4-6 hours)  
-**Status:** Ready for Development  
+**Status:** Done  
 **Created:** 2025-12-01  
+**Completed:** 2025-12-01  
 **Sprint:** Sprint 4
 
 ---
@@ -790,10 +791,63 @@ This story **blocks** the following stories:
 
 ---
 
+## Dev Agent Record
+
+### Implementation Summary
+
+**Component Created:** `src/components/product/product-card.tsx`
+- Named export: `ProductCard` function (Client Component)
+- Props: `product`, `variant`, `onClick`
+- Dependencies: Link, ProductImage, PriceDisplay, Badge
+- Lines: 105 total
+
+**Key Features Implemented:**
+- ✅ Semantic HTML (`<article>` wrapper)
+- ✅ Next.js Link navigation to `/products/${product.slug}`
+- ✅ ProductImage with 16:9 aspect ratio and hover zoom
+- ✅ Category Badge (shadcn/ui secondary variant)
+- ✅ Product name (H3) with line-clamp-2 truncation
+- ✅ Short description with line-clamp-2 truncation
+- ✅ PriceDisplay with Trust Blue color
+- ✅ Hover effects (shadow elevation + image zoom)
+- ✅ Focus ring (2px blue-600 with 2px offset)
+- ✅ WCAG AA accessibility compliance
+- ✅ Touch-friendly mobile interactions
+
+**Files Modified:**
+- Created: `ecommerce-shop/src/components/product/product-card.tsx`
+- Updated: `docs/sprint-artifacts/sprint-status.yaml`
+- Created: `docs/sprint-artifacts/story-4-1-completion-summary.md`
+- Created: `ecommerce-shop/src/app/test/page.tsx` (manual testing page)
+
+### Completion Notes
+
+**Completed:** 2025-12-01  
+**Definition of Done:** All acceptance criteria met (AC-1 through AC-12), code reviewed, TypeScript compilation passed, ESLint passed, production build successful
+
+**Validation Results:**
+- ✅ TypeScript: 0 errors
+- ✅ ESLint: 0 warnings
+- ✅ Production build: Successful
+- ✅ All 12 acceptance criteria verified
+- ✅ Manual testing page created at http://localhost:3000/test
+
+**Technical Decisions:**
+- Added `"use client"` directive for onClick handler support
+- Used Trust Blue theme colors throughout (#2563eb)
+- Implemented standard variant only (compact/featured deferred)
+- Applied line-clamp-2 utility from globals.css
+- Followed Architecture Section 11.2 specification exactly
+
+**Next Story:** 4-2-create-productgrid-component-with-loading-states (ProductGrid Component)
+
+---
+
 **Story Created:** 2025-12-01  
 **Story Owner:** Development Team  
 **Approved By:** SM Agent (via create-story workflow)  
-**Ready for Sprint:** Sprint 4
+**Ready for Sprint:** Sprint 4  
+**Completed:** 2025-12-01
 
 ---
 
