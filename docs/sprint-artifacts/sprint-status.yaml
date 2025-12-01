@@ -42,7 +42,7 @@ development_status:
   epic-1-retrospective: optional
 
   # Epic 2: Design System & UI Components
-  epic-2: backlog
+  epic-2: contexted
   2-1-configure-tailwind-css-with-trust-blue-theme: backlog
   2-2-create-shadcn-ui-base-components-with-trust-blue-styling: backlog
   2-3-create-pricedisplay-component-with-currency-formatting: backlog
