@@ -84,3 +84,31 @@ export interface ProductImageProps {
   className?: string;
 }
 
+// ============================================
+// Story 2.5: ErrorMessage Component
+// ============================================
+
+export interface ErrorMessageProps {
+  /**
+   * User-friendly error message to display
+   * Should be clear and actionable, not technical stack traces
+   * @example "Unable to load products"
+   * @example "Product not found"
+   * @example "Connection issue. Please try again."
+   */
+  message: string;
+  
+  /**
+   * Optional retry callback function
+   * If provided, displays a "Try Again" button that calls this function
+   * @example () => window.location.reload()
+   * @example () => refetchData()
+   */
+  onRetry?: () => void;
+  
+  /**
+   * Additional CSS classes for custom styling
+   */
+  className?: string;
+}
+
