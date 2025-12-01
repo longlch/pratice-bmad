@@ -1,0 +1,33 @@
+[
+  {
+    "id": "all",
+    "name": "All Products",
+    "slug": "all"
+  },
+  {
+    "id": "games",
+    "name": "Games",
+    "slug": "games"
+  },
+  {
+    "id": "software",
+    "name": "Software",
+    "slug": "software"
+  },
+  {
+    "id": "ai-tools",
+    "name": "AI Tools",
+    "slug": "ai-tools"
+  },
+  {
+    "id": "education",
+    "name": "Education",
+    "slug": "education"
+  },
+  {
+    "id": "entertainment",
+    "name": "Entertainment",
+    "slug": "entertainment"
+  }
+]
+
