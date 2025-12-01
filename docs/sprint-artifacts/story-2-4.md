@@ -1,6 +1,6 @@
 # Story 2.4: Create ProductImage Component with Next.js Optimization
 
-Status: review
+Status: done
 
 ## Story
 
