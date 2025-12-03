@@ -380,3 +380,5 @@ import { PriceDisplay } from "@/components/product/price-display";
 **Ready for:** Story 2.4 (ProductImage Component)
 
 
+
+
