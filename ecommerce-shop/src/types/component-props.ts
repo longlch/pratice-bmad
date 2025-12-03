@@ -187,3 +187,15 @@ export type DisplaySize = 'small' | 'large' | 'xlarge';
  */
 export type AspectRatio = '16/9' | '1/1' | '4/3';
 
+// ============================================
+// Story 5.1: ProductDetail Component
+// ============================================
+
+/**
+ * Props for ProductDetail component (Epic 5)
+ */
+export interface ProductDetailProps {
+  /** Product to display in detail view */
+  product: Product;
+}
+
